@@ -1,0 +1,40 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.travelblogger",
+      "nativeLanguage": "en"
+    },
+    "jhipsterVersion": "6.10.4",
+    "applicationType": "monolith",
+    "baseName": "travelbloggerapi",
+    "packageName": "com.travelblogger",
+    "packageFolder": "com/travelblogger",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": false,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "mysql",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "YWEwY2M4OGNkNjQ5N2RmZjZjNzc3YjZiYmE4ZDRiNWRhYWUyNDE5NTdjMzZhYzZiZjE4NjVlYTMzOTIxZTVkYWExNTcyNTdhODEyNzRmZWQ1MjZmMjM2M2MzMGEyMjA2MjY2Zjc3M2E5MjI2ZTU5ZWZjNDE5MDE5MTlmMTU2Yzg=",
+    "embeddableLaunchScript": false,
+    "creationTimestamp": 1604514248663,
+    "testFrameworks": ["gatling"],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": true,
+    "clientPackageManager": "npm",
+    "nativeLanguage": "en",
+    "languages": ["en", "vi"],
+    "blueprints": [],
+    "skipClient": true
+  }
+}
