@@ -4,7 +4,9 @@
 /* ==========================================================================
 Navbar
 ========================================================================== */
-
+.fontdancing {
+  font-family: 'Dancing Script', cursive;
+}
 .navbar-version {
   font-size: 0.65em;
   color: $navbar-dark-color;
@@ -114,4 +116,32 @@ a .nav-link {
 
 .badichvu {
   padding-top: 120px;
+}
+
+.khoimenu {
+  background: url("../../../content/images/slide03.jpg");
+  color: white;
+}
+
+.tieudekhoimenu {
+  display: table;
+  margin: auto;
+  height: 550px;
+  width: 900px;
+}
+
+.tieudekhoimenu .container {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.tieudephu {
+  font-weight: 700;
+  font-size: 38px;
+  color: #feb518;
+}
+
+.tieudechinh {
+  font-size: 36px;
+  font-weight: bold;
 }
