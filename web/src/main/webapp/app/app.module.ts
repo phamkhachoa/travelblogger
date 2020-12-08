@@ -18,6 +18,7 @@ import { DialogModule } from 'primeng/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ButtonModule } from 'primeng/button';
 import { ToastModule } from 'primeng/toast';
+import { CheckboxModule } from 'primeng/checkbox';
 
 @NgModule({
   imports: [
@@ -31,7 +32,8 @@ import { ToastModule } from 'primeng/toast';
     DialogModule,
     BrowserAnimationsModule,
     ButtonModule,
-    ToastModule
+    ToastModule,
+    CheckboxModule,
   ],
   declarations: [MainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, FooterComponent, NavbarCustormComponent],
   bootstrap: [MainComponent],
