@@ -4,11 +4,11 @@ import { Router } from '@angular/router';
 import { VERSION } from 'app/app.constants';
 import { AccountService } from 'app/core/auth/account.service';
 import { LoginModalService } from 'app/core/login/login-modal.service';
-import { LoginService } from 'app/core/login/login.service';
 import { ProfileService } from 'app/layouts/profiles/profile.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { MessageService } from 'primeng/api';
 import { AuthServerProvider } from 'app/core/auth/auth-jwt.service';
+import { LoginCustomizeService } from 'app/core/login-customize/login-customize.service';
 
 @Component({
   selector: 'jhi-navbar',
@@ -32,7 +32,7 @@ export class NavbarComponent implements OnInit {
   };
 
   constructor(
-    private loginService: LoginService,
+    private loginService: LoginCustomizeService,
     private accountService: AccountService,
     private loginModalService: LoginModalService,
     private profileService: ProfileService,
@@ -92,10 +92,10 @@ export class NavbarComponent implements OnInit {
         console.log('result');
         console.log(result);
         this.isLogin = true;
-        this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Message Content' });
+        this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Login success' });
       },
       () => {
-        this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Message Content' });
+        this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Login Fail' });
       }
     );
 
