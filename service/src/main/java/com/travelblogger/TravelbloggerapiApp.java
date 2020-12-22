@@ -6,12 +6,14 @@ import io.github.jhipster.config.DefaultProfileUtil;
 import io.github.jhipster.config.JHipsterConstants;
 
 import org.apache.commons.lang3.StringUtils;
+import org.modelmapper.ModelMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.liquibase.LiquibaseProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.context.annotation.Bean;
 import org.springframework.core.env.Environment;
 
 import javax.annotation.PostConstruct;
@@ -94,5 +96,11 @@ public class TravelbloggerapiApp {
             serverPort,
             contextPath,
             env.getActiveProfiles());
+    }
+
+    @Bean
+    ModelMapper modelMapperabc() {
+        ModelMapper mapper = new ModelMapper();
+        return mapper;
     }
 }
