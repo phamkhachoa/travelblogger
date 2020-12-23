@@ -10,11 +10,11 @@ import org.modelmapper.ModelMapper;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.CollectionUtils;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import reactor.core.publisher.Flux;
 
 import java.util.Collections;
 import java.util.List;
@@ -45,10 +45,17 @@ public class PostResource {
         HttpHeaders headers = new HttpHeaders();
         headers.add("Content-Type", "application/json");
         ObjectMapper mapper = new ObjectMapper();
-        String str = postService.doSearch(dto, pageable).toString();
+        String str = postService.doSearch(dto, pageable).getContent().toString();
         List<PostDTO> pp3 = mapper.readValue(str, new TypeReference<List<PostDTO>>() {});
 //        List<PostDTO> list = this.mapList(postService.doSearch(dto, pageable), PostDTO.class);
 
         return new ResponseEntity<>(pp3, headers, HttpStatus.OK);
     }
+
+    @GetMapping(value = "/likes/{id}", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
+    public Flux<Integer> likesTransactionEvents(@PathVariable Integer id) throws Exception {
+        return postService.likesTransaction(id);
+    }
+
+
 }

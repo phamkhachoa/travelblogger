@@ -16,8 +16,13 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.security.web.header.writers.ReferrerPolicyHeaderWriter;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.CorsConfigurationSource;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
 import org.zalando.problem.spring.web.advice.security.SecurityProblemSupport;
+
+import java.util.Arrays;
 
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true, securedEnabled = true)
@@ -48,6 +53,18 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
             .antMatchers("/test/**");
     }
 
+    @Bean
+    CorsConfigurationSource corsConfigurationSource() {
+        CorsConfiguration configuration = new CorsConfiguration();
+        configuration.setAllowedOrigins(Arrays.asList("http://localhost:9000"));
+        configuration.setAllowedMethods(Arrays.asList("GET", "POST", "DELETE", "PUT", "OPTIONS"));
+        configuration.setAllowCredentials(true);
+        configuration.setAllowedHeaders(Arrays.asList("Origin", "X-Requested-With", "Content-Type", "Accept", "Authorization", "t"));
+        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        source.registerCorsConfiguration("/**", configuration);
+        return source;
+    }
+
     @Override
     public void configure(HttpSecurity http) throws Exception {
         // @formatter:off
@@ -70,23 +87,23 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
             .deny()
         .and()
             .sessionManagement()
-            .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-        .and()
-            .authorizeRequests()
-            .antMatchers("/api/authenticate").permitAll()
-            .antMatchers("/api/register").permitAll()
-            .antMatchers("/api/activate").permitAll()
-            .antMatchers("/api/account/reset-password/init").permitAll()
-            .antMatchers("/api/account/reset-password/finish").permitAll()
-            .antMatchers("/api/**").authenticated()
-            .antMatchers("/management/health").permitAll()
-            .antMatchers("/management/info").permitAll()
-            .antMatchers("/management/prometheus").permitAll()
-            .antMatchers("/management/**").hasAuthority(AuthoritiesConstants.ADMIN)
-        .and()
-            .httpBasic()
-        .and()
-            .apply(securityConfigurerAdapter());
+            .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+//        .and()
+//            .authorizeRequests()
+//            .antMatchers("/api/authenticate").permitAll()
+//            .antMatchers("/api/register").permitAll()
+//            .antMatchers("/api/activate").permitAll()
+//            .antMatchers("/api/account/reset-password/init").permitAll()
+//            .antMatchers("/api/account/reset-password/finish").permitAll()
+//            .antMatchers("/api/**").authenticated()
+//            .antMatchers("/management/health").permitAll()
+//            .antMatchers("/management/info").permitAll()
+//            .antMatchers("/management/prometheus").permitAll()
+//            .antMatchers("/management/**").hasAuthority(AuthoritiesConstants.ADMIN)
+//        .and()
+//            .httpBasic()
+//        .and()
+//            .apply(securityConfigurerAdapter());
         // @formatter:on
     }
 

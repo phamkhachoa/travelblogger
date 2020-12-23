@@ -11,9 +11,7 @@ import java.sql.Date;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@Getter
-@Setter
-public class PostDTO implements Serializable {
+public class PostDTO extends BaseDTO{
     private Integer id;
     private String description;
     private String content;
@@ -36,107 +34,107 @@ public class PostDTO implements Serializable {
         this.content = content;
     }
 
-//    public Integer getId() {
-//        return id;
-//    }
-//
-//    public void setId(Integer id) {
-//        this.id = id;
-//    }
-//
-//    public String getDescription() {
-//        return description;
-//    }
-//
-//    public void setDescription(String description) {
-//        this.description = description;
-//    }
-//
-//    public String getContent() {
-//        return content;
-//    }
-//
-//    public void setContent(String content) {
-//        this.content = content;
-//    }
-//
-//    public String getImgPost() {
-//        return imgPost;
-//    }
-//
-//    public void setImgPost(String imgPost) {
-//        this.imgPost = imgPost;
-//    }
-//
-//    public Date getCreateDate() {
-//        return createDate;
-//    }
-//
-//    public void setCreateDate(Date createDate) {
-//        this.createDate = createDate;
-//    }
-//
-//    public Integer getLikes() {
-//        return likes;
-//    }
-//
-//    public void setLikes(Integer likes) {
-//        this.likes = likes;
-//    }
-//
-//    public String getDistrict() {
-//        return district;
-//    }
-//
-//    public void setDistrict(String district) {
-//        this.district = district;
-//    }
-//
-//    public Integer getIdProvince() {
-//        return idProvince;
-//    }
-//
-//    public void setIdProvince(Integer idProvince) {
-//        this.idProvince = idProvince;
-//    }
-//
-//    public Integer getIdAccount() {
-//        return idAccount;
-//    }
-//
-//    public void setIdAccount(Integer idAccount) {
-//        this.idAccount = idAccount;
-//    }
-//
-//    public Integer getIdTopic() {
-//        return idTopic;
-//    }
-//
-//    public void setIdTopic(Integer idTopic) {
-//        this.idTopic = idTopic;
-//    }
-//
-//    public String getNamePlace() {
-//        return namePlace;
-//    }
-//
-//    public void setNamePlace(String namePlace) {
-//        this.namePlace = namePlace;
-//    }
-//
-//    public String getTitle() {
-//        return title;
-//    }
-//
-//    public void setTitle(String title) {
-//        this.title = title;
-//    }
-//
-//    public Integer getActiveFlag() {
-//        return activeFlag;
-//    }
-//
-//    public void setActiveFlag(Integer activeFlag) {
-//        this.activeFlag = activeFlag;
-//    }
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public String getImgPost() {
+        return imgPost;
+    }
+
+    public void setImgPost(String imgPost) {
+        this.imgPost = imgPost;
+    }
+
+    public Date getCreateDate() {
+        return createDate;
+    }
+
+    public void setCreateDate(Date createDate) {
+        this.createDate = createDate;
+    }
+
+    public Integer getLikes() {
+        return likes;
+    }
+
+    public void setLikes(Integer likes) {
+        this.likes = likes;
+    }
+
+    public String getDistrict() {
+        return district;
+    }
+
+    public void setDistrict(String district) {
+        this.district = district;
+    }
+
+    public Integer getIdProvince() {
+        return idProvince;
+    }
+
+    public void setIdProvince(Integer idProvince) {
+        this.idProvince = idProvince;
+    }
+
+    public Integer getIdAccount() {
+        return idAccount;
+    }
+
+    public void setIdAccount(Integer idAccount) {
+        this.idAccount = idAccount;
+    }
+
+    public Integer getIdTopic() {
+        return idTopic;
+    }
+
+    public void setIdTopic(Integer idTopic) {
+        this.idTopic = idTopic;
+    }
+
+    public String getNamePlace() {
+        return namePlace;
+    }
+
+    public void setNamePlace(String namePlace) {
+        this.namePlace = namePlace;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public Integer getActiveFlag() {
+        return activeFlag;
+    }
+
+    public void setActiveFlag(Integer activeFlag) {
+        this.activeFlag = activeFlag;
+    }
 }

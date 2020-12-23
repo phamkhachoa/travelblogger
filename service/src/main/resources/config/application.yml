@@ -86,11 +86,13 @@ spring:
       hibernate.order_updates: true
       hibernate.query.fail_on_pagination_over_collection_fetch: true
       hibernate.query.in_clause_parameter_padding: true
+      format_sql: true
     hibernate:
       ddl-auto: none
       naming:
         physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
         implicit-strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
+    show-sql: true
   messages:
     basename: i18n/messages
   main:
@@ -163,3 +165,4 @@ jhipster:
 # ===================================================================
 
 # application:
+

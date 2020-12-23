@@ -19,6 +19,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ButtonModule } from 'primeng/button';
 import { ToastModule } from 'primeng/toast';
 import { CheckboxModule } from 'primeng/checkbox';
+import { PostComponent } from './post/post.component';
 
 @NgModule({
   imports: [
@@ -35,7 +36,7 @@ import { CheckboxModule } from 'primeng/checkbox';
     ToastModule,
     CheckboxModule,
   ],
-  declarations: [MainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, FooterComponent, NavbarCustormComponent],
+  declarations: [MainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, FooterComponent, NavbarCustormComponent, PostComponent],
   bootstrap: [MainComponent],
 })
 export class TravelbloggerAppModule {}
