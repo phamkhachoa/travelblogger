@@ -20,12 +20,12 @@ export class PostService {
     return new EventSource(this.resourceUrl + "/likes/" + id);
   }
 
-  newObservable<R>(id: Number, ): Observable<R> {
+  newObservable(id: Number, ): Observable<any> {
     return new Observable(observer => {
       const eventSource = this.newEventSource(id);
       eventSource.onmessage = event => {
-        console.log(event);
-        observer.next();
+        // console.log(event);
+        observer.next(event);
       };
       eventSource.onerror = () => {
         if (eventSource.readyState !== eventSource.CONNECTING) {

@@ -9,10 +9,16 @@ import { PostService } from 'app/core/user/post.service';
 export class PostTempComponent implements OnInit {
 
   likes: Number = 0;
+  name = 'a';
 
   constructor(private postService: PostService) { }
 
   ngOnInit(): void {
-    this.postService.newObservable(3).subscribe();
+    this.postService.newObservable(3).subscribe(
+      result => {
+        this.likes = result.data;
+        console.log(this.likes);
+      }
+    );
   }
 }
