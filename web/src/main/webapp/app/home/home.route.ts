@@ -13,7 +13,7 @@ export const HOME_ROUTE: Routes = [
     }
   },
   {
-    path: 'post',
+    path: 'post/{id}',
     component: PostTempComponent,
     data: {
       authorities: [],

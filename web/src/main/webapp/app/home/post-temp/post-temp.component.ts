@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { PostService } from 'app/core/user/post.service';
 
 @Component({
@@ -8,17 +8,24 @@ import { PostService } from 'app/core/user/post.service';
 })
 export class PostTempComponent implements OnInit {
 
-  likes: Number = 0;
+  likes = 0;
   name = 'a';
 
-  constructor(private postService: PostService) { }
+  constructor(private postService: PostService, private cd: ChangeDetectorRef) {
+  }
 
   ngOnInit(): void {
+    console.log('initing....');
     this.postService.newObservable(3).subscribe(
       result => {
-        this.likes = result.data;
+        this.updateLike(result.data);
         console.log(this.likes);
+        this.cd.detectChanges();
       }
     );
+  }
+
+  updateLike(data: any): void {
+    this.likes = data;
   }
 }
