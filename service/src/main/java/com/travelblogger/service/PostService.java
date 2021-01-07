@@ -12,8 +12,10 @@ import reactor.core.publisher.Flux;
 import reactor.util.function.Tuple2;
 
 import java.time.Duration;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 @Service
@@ -21,7 +23,6 @@ public class PostService {
     private final PostRepository postRepository;
 
     private Integer oldLike = 0;
-    private Integer newLike = 0;
 
     public PostService(PostRepository postRepository) {
         this.postRepository = postRepository;

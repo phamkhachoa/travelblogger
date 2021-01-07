@@ -104,7 +104,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 //            .httpBasic()
 //        .and()
 //            .apply(securityConfigurerAdapter());
-        // @formatter:on
+//         @formatter:on
     }
 
     private JWTConfigurer securityConfigurerAdapter() {
